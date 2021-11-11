@@ -1,14 +1,16 @@
-const marek = createNewPerson('marek');
-marek.name;
-marek.greeting();
-
-
-
-function createNewPerson(name) {
-    const obj = {};
-    obj.name = name;
-    obj.greeting = function() {
-        console.log('Hi! I\'m ' + obj.name + '.');
+function Person(name) {
+    this.name = name;
+    this.greeting = function() {
+        console.log('Hi! I\'m ' + this.name + '.');
     };
-    return obj;
 }
+
+let person1 = new Person('Bob');
+let person2 = new Person('Sarah');
+
+person1.name
+person1.greeting()
+person2.name
+person2.greeting()
+
+
