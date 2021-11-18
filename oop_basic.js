@@ -1,16 +1,20 @@
-function Person(name) {
+//shape constructor
+function Shape(name, sides, sideLength) {
+    //attributes aka fields
     this.name = name;
-    this.greeting = function() {
-        console.log('Hi! I\'m ' + this.name + '.');
-    };
+    this.sides = sides;
+    this.sideLength = sideLength;
+    //functional- methods
+    this.calcPerimeter = function (){
+        this.perimeter = this.sides * this.sideLength ;
+        console.log(this.perimeter)
+    }
 }
-
-let person1 = new Person('Bob');
-let person2 = new Person('Sarah');
-
-person1.name
-person1.greeting()
-person2.name
-person2.greeting()
-
-
+// object creation
+let square = new Shape("square",4,5 );
+let triangle = new Shape("triangle", 3, 3);
+console.log(square)
+console.log(triangle)
+//object method calling
+square.calcPerimeter()
+triangle.calcPerimeter()
